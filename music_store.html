@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MUSIC STORE — Electric Guitars & Premium Gear</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Inter & Outfit for rounded clean typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;700;800;900&display=swap" rel="stylesheet">
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        musicbg: '#171215',
+                        musiccard: '#231b1e',
+                        musiccardhover: '#2d2226',
+                        coralred: '#eb4338',
+                        coralhover: '#d6342a',
+                        corallight: '#ff5c52',
+                        creammuted: '#f3ece6',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="antialiased selection:bg-coralred selection:text-white">
+
+    
+    <header class="fixed top-0 left-0 right-0 z-50 bg-[#171215]/90 backdrop-blur-md border-b border-white/5 transition-all">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            
+            <a href="#" class="flex items-center gap-2 group">
+                <div class="w-9 h-9 rounded-xl bg-coralred flex items-center justify-center text-black font-black text-lg shadow-lg shadow-coralred/30 group-hover:scale-105 transition-transform">
+                    <i class="fa-solid fa-guitar text-white text-sm"></i>
+                </div>
+                <span class="font-display font-extrabold text-xl sm:text-2xl tracking-wider text-white">MUSIC STORE</span>
+            </a>
+
+            
+            <nav class="hidden md:flex items-center gap-10 font-medium text-sm text-gray-300">
+                <a href="#hero" class="hover:text-coralred transition-colors">Shop</a>
+                <a href="#products" class="hover:text-coralred transition-colors">Top Gear</a>
+                <a href="#about" class="hover:text-coralred transition-colors">About</a>
+                <a href="#reviews" class="hover:text-coralred transition-colors">Reviews</a>
+                <a href="#contact" class="hover:text-coralred transition-colors">Contact</a>
+            </nav>
+
+            
+            <div class="flex items-center gap-4">
+                <button id="cart-btn" class="relative p-2.5 rounded-full text-gray-300 hover:text-white hover:bg-white/5 transition-colors">
+                    <i class="fa-solid fa-cart-shopping text-lg"></i>
+                    <span id="cart-count" class="absolute -top-1 -right-1 w-5 h-5 bg-coralred text-white text-xs font-bold rounded-full flex items-center justify-center border-2 border-musicbg">0</span>
+                </button>
+                
+                <a href="#contact" class="clay-btn px-6 py-2.5 rounded-full text-sm font-semibold text-white tracking-wide">
+                    Sign Up
+                </a>
+
+                
+                <button id="mobile-toggle" aria-label="Toggle Mobile Navigation" class="md:hidden text-gray-300 hover:text-white p-2">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        
+        <div id="mobile-menu" class="hidden md:hidden bg-musiccard border-b border-gray-800 p-6 space-y-4">
+            <a href="#hero" class="mobile-link block text-lg font-medium text-gray-200 hover:text-coralred">Shop</a>
+            <a href="#products" class="mobile-link block text-lg font-medium text-gray-200 hover:text-coralred">Top Gear</a>
+            <a href="#about" class="mobile-link block text-lg font-medium text-gray-200 hover:text-coralred">About</a>
+            <a href="#reviews" class="mobile-link block text-lg font-medium text-gray-200 hover:text-coralred">Reviews</a>
+            <a href="#contact" class="mobile-link block text-lg font-medium text-gray-200 hover:text-coralred">Contact</a>
+        </div>
+    </header>
+
+    
+    <section id="hero" class="relative pt-28 pb-16 md:pt-36 md:pb-24 min-h-screen flex flex-col justify-between overflow-hidden">
+        
+        <div class="absolute top-1/3 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-coralred/15 rounded-full blur-[120px] pointer-events-none"></div>
+        <div class="absolute top-1/4 right-10 w-[350px] h-[350px] bg-coralred/10 rounded-full blur-[100px] pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-6 w-full relative z-10 my-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center min-h-[420px]">
+                
+                
+                <div class="lg:col-span-5 relative flex items-center justify-center order-2 lg:order-1 my-6 lg:my-0">
+                    <div class="relative w-full max-w-md aspect-square flex items-center justify-center">
+                        <div class="absolute bottom-4 w-3/4 h-8 bg-black/60 rounded-full blur-xl"></div>
+                        <div class="animate-guitar w-full h-full flex items-center justify-center filter drop-shadow-[0_20px_35px_rgba(0,0,0,0.8)]">
+                            <svg viewBox="0 0 400 600" class="w-full h-full max-h-[480px]" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="guitarBody" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" stop-color="#ff5247"/>
+                                        <stop offset="60%" stop-color="#e03228"/>
+                                        <stop offset="100%" stop-color="#a81a12"/>
+                                    </linearGradient>
+                                    <linearGradient id="pickguard" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" stop-color="#2a2225"/>
+                                        <stop offset="100%" stop-color="#120e10"/>
+                                    </linearGradient>
+                                    <linearGradient id="fretboard" x1="0%" y1="0%" x2="100%" y2="0%">
+                                        <stop offset="0%" stop-color="#3d3135"/>
+                                        <stop offset="100%" stop-color="#1f181b"/>
+                                    </linearGradient>
+                                </defs>
+                                <rect x="188" y="40" width="24" height="320" rx="3" fill="url(#fretboard)" />
+                                <path d="M188 80 H212 M188 110 H212 M188 140 H212 M188 170 H212 M188 200 H212 M188 230 H212 M188 260 H212 M188 290 H212 M188 320 H212" stroke="#66535a" stroke-width="2"/>
+                                <path d="M180 40 L184 10 L216 10 L220 40 Z" fill="#231b1e" stroke="#e03228" stroke-width="2"/>
+                                <circle cx="178" cy="18" r="5" fill="#a8a0a3"/>
+                                <circle cx="178" cy="28" r="5" fill="#a8a0a3"/>
+                                <circle cx="178" cy="38" r="5" fill="#a8a0a3"/>
+                                <circle cx="222" cy="18" r="5" fill="#a8a0a3"/>
+                                <circle cx="222" cy="28" r="5" fill="#a8a0a3"/>
+                                <circle cx="222" cy="38" r="5" fill="#a8a0a3"/>
+                                <path d="M140 280 C 120 250, 130 220, 150 230 C 165 238, 175 260, 180 280 L 220 280 C 225 260, 235 238, 250 230 C 270 220, 280 250, 260 280 C 310 320, 320 400, 280 470 C 250 520, 150 520, 120 470 C 80 400, 90 320, 140 280 Z" fill="url(#guitarBody)" stroke="#ff6b61" stroke-width="3" />
+                                <path d="M165 290 Q 200 300 235 290 Q 255 350 225 410 Q 175 420 155 360 Z" fill="url(#pickguard)" />
+                                <rect x="175" y="310" width="50" height="18" rx="4" fill="#120e10" stroke="#8c8084" stroke-width="2"/>
+                                <rect x="175" y="350" width="50" height="18" rx="4" fill="#120e10" stroke="#8c8084" stroke-width="2"/>
+                                <circle cx="225" cy="435" r="9" fill="#120e10" stroke="#a81a12" stroke-width="2"/>
+                                <circle cx="245" cy="455" r="9" fill="#120e10" stroke="#a81a12" stroke-width="2"/>
+                                <circle cx="205" cy="455" r="9" fill="#120e10" stroke="#a81a12" stroke-width="2"/>
+                                <rect x="178" y="385" width="44" height="14" rx="2" fill="#8c8084"/>
+                                <line x1="191" y1="15" x2="191" y2="390" stroke="#e6e1e3" stroke-width="1.2" opacity="0.8"/>
+                                <line x1="194" y1="15" x2="194" y2="390" stroke="#e6e1e3" stroke-width="1.2" opacity="0.8"/>
+                                <line x1="197" y1="15" x2="197" y2="390" stroke="#e6e1e3" stroke-width="1.2" opacity="0.8"/>
+                                <line x1="200" y1="15" x2="200" y2="390" stroke="#e6e1e3" stroke-width="1.2" opacity="0.8"/>
+                                <line x1="203" y1="15" x2="203" y2="390" stroke="#e6e1e3" stroke-width="1.2" opacity="0.8"/>
+                                <line x1="206" y1="15" x2="206" y2="390" stroke="#e6e1e3" stroke-width="1.2" opacity="0.8"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div class="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left order-1 lg:order-2 space-y-6">
+                    <div class="self-center lg:self-end mb-2">
+                        <div class="neon-sign-box px-6 py-4 bg-black/40 backdrop-blur-sm flex items-center gap-4">
+                            <svg class="w-12 h-12 neon-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20 28V14C20 11.8 21.8 10 24 10C26.2 10 28 11.8 28 14V26M36 26V14C36 11.8 37.8 10 40 10C42.2 10 44 11.8 44 14V28M28 26V20C28 18 29.5 16.5 31.5 16.5C33.5 16.5 35 18 35 20V26M20 26C18 26 16 27.5 16 29.5V40C16 47.5 22 53.5 29.5 53.5H35C42.5 53.5 48.5 47.5 48.5 40V29.5C48.5 27.5 47 26 45 26" stroke="#ff5c52" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <div class="text-left font-display leading-none">
+                                <div class="neon-text text-2xl font-black tracking-widest uppercase">ROCK</div>
+                                <div class="neon-text text-2xl font-black tracking-widest uppercase">ON</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-2 w-full">
+                        <h1 class="font-display font-black text-4xl sm:text-6xl md:text-7xl uppercase tracking-tight text-white leading-none">
+                            ELECTRIC GUITARS
+                        </h1>
+                        <p class="text-corallight font-medium text-xl sm:text-2xl tracking-wide">
+                            Unleash Your Sound
+                        </p>
+                    </div>
+
+                    <div class="pt-4">
+                        <a href="#products" class="clay-btn inline-flex items-center justify-center px-10 py-4 rounded-full text-lg font-bold text-white tracking-wider shadow-xl">
+                            Shop Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+           
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mt-12 pt-6">
+                <a href="#products" class="clay-card p-5 sm:p-6 flex flex-col items-center justify-between text-center group">
+                    <div class="w-20 h-24 sm:w-28 sm:h-32 mb-3 flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <svg viewBox="0 0 100 150" class="w-full h-full filter drop-shadow-[0_8px_12px_rgba(0,0,0,0.6)]">
+                            <path d="M35 70 C 25 60, 30 50, 40 55 C 45 58, 48 65, 50 70 L 50 20 L 54 20 L 54 70 C 56 65, 59 58, 64 55 C 74 50, 79 60, 69 70 C 80 80, 85 100, 70 120 C 60 135, 40 135, 30 120 C 15 100, 20 80, 35 70 Z" fill="#eb4338"/>
+                            <rect x="47" y="75" width="10" height="25" fill="#171215" rx="2"/>
+                            <circle cx="52" cy="110" r="4" fill="#171215"/>
+                        </svg>
+                    </div>
+                    <span class="font-display font-bold text-base sm:text-lg text-gray-100 group-hover:text-corallight transition-colors">
+                        Shop Guitars
+                    </span>
+                </a>
+
+                <a href="#products" class="clay-card p-5 sm:p-6 flex flex-col items-center justify-between text-center group">
+                    <div class="w-20 h-24 sm:w-28 sm:h-32 mb-3 flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <div class="w-20 h-20 sm:w-24 sm:h-24 bg-[#171215] rounded-xl border-2 border-gray-800 p-2 flex flex-col justify-between shadow-inner">
+                            <div class="bg-black/60 rounded-lg p-1.5 flex justify-around items-center">
+                                <span class="w-2 h-2 rounded-full bg-coralred"></span>
+                                <span class="w-2 h-2 rounded-full bg-coralred"></span>
+                                <span class="w-2 h-2 rounded-full bg-coralred"></span>
+                                <span class="w-2 h-2 rounded-full bg-coralred"></span>
+                                <span class="w-2 h-2 rounded-full bg-coralred"></span>
+                            </div>
+                            <div class="bg-[#2a2024] rounded-md h-9 border border-coralred/40 flex items-center justify-center">
+                                <span class="text-[10px] font-bold text-coralred uppercase tracking-widest px-1 bg-black/50 rounded">AMPLIFIERS</span>
+                            </div>
+                        </div>
+                    </div>
+                    <span class="font-display font-bold text-base sm:text-lg text-gray-100 group-hover:text-corallight transition-colors">
+                        Amplifiers
+                    </span>
+                </a>
+
+                <a href="#products" class="clay-card p-5 sm:p-6 flex flex-col items-center justify-between text-center group">
+                    <div class="w-20 h-24 sm:w-28 sm:h-32 mb-3 flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <div class="relative w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center">
+                            <div class="absolute inset-0 rounded-full border-4 border-[#2b2125] border-t-coralred"></div>
+                            <div class="w-6 h-9 bg-coralred rounded-lg -left-1 absolute border-2 border-black/40"></div>
+                            <div class="w-6 h-9 bg-coralred rounded-lg -right-1 absolute border-2 border-black/40"></div>
+                        </div>
+                    </div>
+                    <span class="font-display font-bold text-base sm:text-lg text-gray-100 group-hover:text-corallight transition-colors">
+                        Accessories
+                    </span>
+                </a>
+
+                <a href="#products" class="clay-card p-5 sm:p-6 flex flex-col items-center justify-between text-center group">
+                    <div class="w-20 h-24 sm:w-28 sm:h-32 mb-3 flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <div class="w-16 h-20 bg-coralred rounded-2xl border-2 border-black/40 flex flex-col items-center justify-between p-2 shadow-lg">
+                            <div class="w-4 h-4 rounded-full bg-black/80 border border-white/20"></div>
+                            <i class="fa-solid fa-bolt text-white text-xl"></i>
+                            <div class="w-10 h-3 bg-black/60 rounded-md"></div>
+                        </div>
+                    </div>
+                    <span class="font-display font-bold text-base sm:text-lg text-gray-100 group-hover:text-corallight transition-colors">
+                        Effects
+                    </span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    
+    <section id="products" class="py-24 bg-[#120e10] border-t border-b border-white/5 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-4">
+                <div>
+                    <span class="text-coralred text-xs font-extrabold uppercase tracking-widest px-3 py-1 rounded-full bg-coralred/10 border border-coralred/20">
+                        Handpicked Sound
+                    </span>
+                    <h2 class="font-display font-extrabold text-3xl sm:text-5xl text-white mt-3">
+                        Featured Top Gear
+                    </h2>
+                </div>
+
+                <div class="flex flex-wrap gap-2 p-1.5 bg-musiccard rounded-full border border-white/5 text-sm">
+                    <button class="filter-btn px-5 py-2 rounded-full font-semibold text-white bg-coralred shadow-md" data-category="all">All</button>
+                    <button class="filter-btn px-5 py-2 rounded-full font-semibold text-gray-400 hover:text-white" data-category="guitars">Guitars</button>
+                    <button class="filter-btn px-5 py-2 rounded-full font-semibold text-gray-400 hover:text-white" data-category="amps">Amps</button>
+                    <button class="filter-btn px-5 py-2 rounded-full font-semibold text-gray-400 hover:text-white" data-category="pedals">Pedals</button>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="product-card clay-card p-6 flex flex-col justify-between group" data-category="guitars">
+                    <div class="relative w-full aspect-square bg-[#171215] rounded-2xl flex items-center justify-center p-4 mb-5 overflow-hidden">
+                        <span class="absolute top-3 left-3 bg-coralred text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full">Hot</span>
+                        <img src="https://images.unsplash.com/photo-1564186763535-ebb21ef5277f?auto=format&fit=crop&w=500&q=80" alt="Red Gibson Electric Guitar" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="space-y-2">
+                        <div class="flex items-center justify-between text-xs text-gray-400">
+                            <span>Electric Guitar</span>
+                            <span class="text-amber-400"><i class="fa-solid fa-star"></i> 4.9</span>
+                        </div>
+                        <h3 class="font-display font-bold text-lg text-white group-hover:text-corallight transition-colors">Vortex SG Pro Red Custom</h3>
+                        <div class="flex items-center justify-between pt-3 border-t border-white/5">
+                            <span class="font-display font-extrabold text-xl text-white">$1,299.00</span>
+                            <button class="add-cart-btn w-10 h-10 rounded-full bg-coralred hover:bg-coralhover text-white flex items-center justify-center shadow-lg transition-transform hover:scale-105">
+                                <i class="fa-solid fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card clay-card p-6 flex flex-col justify-between group" data-category="amps">
+                    <div class="relative w-full aspect-square bg-[#171215] rounded-2xl flex items-center justify-center p-4 mb-5 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1558098329-a11cff621064?auto=format&fit=crop&w=500&q=80" alt="Tube Amplifier" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="space-y-2">
+                        <div class="flex items-center justify-between text-xs text-gray-400">
+                            <span>Amplifiers</span>
+                            <span class="text-amber-400"><i class="fa-solid fa-star"></i> 4.8</span>
+                        </div>
+                        <h3 class="font-display font-bold text-lg text-white group-hover:text-corallight transition-colors">StageKing 50W Tube Amp</h3>
+                        <div class="flex items-center justify-between pt-3 border-t border-white/5">
+                            <span class="font-display font-extrabold text-xl text-white">$749.00</span>
+                            <button class="add-cart-btn w-10 h-10 rounded-full bg-coralred hover:bg-coralhover text-white flex items-center justify-center shadow-lg transition-transform hover:scale-105">
+                                <i class="fa-solid fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card clay-card p-6 flex flex-col justify-between group" data-category="pedals">
+                    <div class="relative w-full aspect-square bg-[#171215] rounded-2xl flex items-center justify-center p-4 mb-5 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1525201548942-d8732f6617a0?auto=format&fit=crop&w=500&q=80" alt="Overdrive Distortion Pedal" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="space-y-2">
+                        <div class="flex items-center justify-between text-xs text-gray-400">
+                            <span>Effects Pedal</span>
+                            <span class="text-amber-400"><i class="fa-solid fa-star"></i> 5.0</span>
+                        </div>
+                        <h3 class="font-display font-bold text-lg text-white group-hover:text-corallight transition-colors">Red Fury Overdrive Pedal</h3>
+                        <div class="flex items-center justify-between pt-3 border-t border-white/5">
+                            <span class="font-display font-extrabold text-xl text-white">$189.00</span>
+                            <button class="add-cart-btn w-10 h-10 rounded-full bg-coralred hover:bg-coralhover text-white flex items-center justify-center shadow-lg transition-transform hover:scale-105">
+                                <i class="fa-solid fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card clay-card p-6 flex flex-col justify-between group" data-category="guitars">
+                    <div class="relative w-full aspect-square bg-[#171215] rounded-2xl flex items-center justify-center p-4 mb-5 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1550985616-10810253b84d?auto=format&fit=crop&w=500&q=80" alt="Matte Black Bass Guitar" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="space-y-2">
+                        <div class="flex items-center justify-between text-xs text-gray-400">
+                            <span>Bass Guitar</span>
+                            <span class="text-amber-400"><i class="fa-solid fa-star"></i> 4.7</span>
+                        </div>
+                        <h3 class="font-display font-bold text-lg text-white group-hover:text-corallight transition-colors">Obsidian 4-String Bass</h3>
+                        <div class="flex items-center justify-between pt-3 border-t border-white/5">
+                            <span class="font-display font-extrabold text-xl text-white">$899.00</span>
+                            <button class="add-cart-btn w-10 h-10 rounded-full bg-coralred hover:bg-coralhover text-white flex items-center justify-center shadow-lg transition-transform hover:scale-105">
+                                <i class="fa-solid fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+  
+    <section id="about" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <span class="text-coralred text-xs font-extrabold uppercase tracking-widest px-3 py-1 rounded-full bg-coralred/10 border border-coralred/20">
+                    The Music Store Standard
+                </span>
+                <h2 class="font-display font-extrabold text-3xl sm:text-5xl text-white">
+                    Engineered for Ultimate Performance
+                </h2>
+                <p class="text-gray-400 text-base">
+                    Every instrument and accessory undergoes rigorous 21-point audio and hardware calibration before shipping.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="clay-card p-8 text-center space-y-4">
+                    <div class="w-16 h-16 mx-auto rounded-2xl bg-coralred/15 text-coralred flex items-center justify-center text-3xl shadow-inner">
+                        <i class="fa-solid fa-sliders"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-xl text-white">Pro Setup Guaranteed</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Precision action, neck relief, and intonation tuned by master luthiers right out of the box.
+                    </p>
+                </div>
+
+                <div class="clay-card p-8 text-center space-y-4">
+                    <div class="w-16 h-16 mx-auto rounded-2xl bg-coralred/15 text-coralred flex items-center justify-center text-3xl shadow-inner">
+                        <i class="fa-solid fa-truck-fast"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-xl text-white">Insured Global Shipping</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Heavy-duty custom flight cases ensure your dream gear arrives pristine anywhere on Earth.
+                    </p>
+                </div>
+
+                <div class="clay-card p-8 text-center space-y-4">
+                    <div class="w-16 h-16 mx-auto rounded-2xl bg-coralred/15 text-coralred flex items-center justify-center text-3xl shadow-inner">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-xl text-white">30-Day Sound Guarantee</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Test it on stage or in the studio. If it doesn't blow your mind, return it with zero hassle.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section id="reviews" class="py-24 bg-[#120e10] border-t border-b border-white/5 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+                <span class="text-coralred text-xs font-extrabold uppercase tracking-widest px-3 py-1 rounded-full bg-coralred/10 border border-coralred/20">
+                    Stage Verified
+                </span>
+                <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-white">
+                    Loved by Shredders Worldwide
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="clay-card p-8 flex flex-col justify-between space-y-6">
+                    <div class="space-y-3">
+                        <div class="flex text-amber-400 text-sm gap-1">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-gray-300 text-sm italic leading-relaxed">
+                            "The Vortex SG Pro exceeded my expectations! The action was silky smooth right out of the box and the pickups produce unmatched punch."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-4 pt-4 border-t border-white/5">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80" alt="Alex Turner" class="w-12 h-12 rounded-full object-cover border-2 border-coralred">
+                        <div>
+                            <h4 class="font-display font-bold text-white text-sm">Alex Turner</h4>
+                            <p class="text-xs text-gray-400">Lead Guitarist, Red Eclipse</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="clay-card p-8 flex flex-col justify-between space-y-6">
+                    <div class="space-y-3">
+                        <div class="flex text-amber-400 text-sm gap-1">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-gray-300 text-sm italic leading-relaxed">
+                            "Fast shipping, incredible customer service, and the tube amp has that authentic warm vintage tone I've been hunting for years."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-4 pt-4 border-t border-white/5">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80" alt="Dave Miller" class="w-12 h-12 rounded-full object-cover border-2 border-coralred">
+                        <div>
+                            <h4 class="font-display font-bold text-white text-sm">Dave Miller</h4>
+                            <p class="text-xs text-gray-400">Studio Producer & Session Musician</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="clay-card p-8 flex flex-col justify-between space-y-6">
+                    <div class="space-y-3">
+                        <div class="flex text-amber-400 text-sm gap-1">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-gray-300 text-sm italic leading-relaxed">
+                            "The neon aesthetic and interface hooked me, but the gear quality made me a lifelong customer. Top tier music shop!"
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-4 pt-4 border-t border-white/5">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=120&q=80" alt="Sarah Connor" class="w-12 h-12 rounded-full object-cover border-2 border-coralred">
+                        <div>
+                            <h4 class="font-display font-bold text-white text-sm">Sarah Connor</h4>
+                            <p class="text-xs text-gray-400">Independent Recording Artist</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+  
+    <section id="contact" class="pt-20 pb-12 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 space-y-16">
+            <div class="clay-card p-8 sm:p-12 relative overflow-hidden border border-coralred/30">
+                <div class="max-w-2xl space-y-4 relative z-10">
+                    <span class="text-coralred text-xs font-extrabold uppercase tracking-widest">VIP Club</span>
+                    <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-white">
+                        Get 10% Off Your First Ax
+                    </h2>
+                    <p class="text-gray-300 text-sm">
+                        Subscribe to receive exclusive gear drops, flash sales, and artist interviews directly in your inbox.
+                    </p>
+                    <form id="newsletter-form" class="flex flex-col sm:flex-row gap-3 pt-2">
+                        <input type="email" required placeholder="Enter your email address..." class="px-5 py-3.5 rounded-full bg-black/60 border border-gray-800 text-white placeholder-gray-500 focus:outline-none focus:border-coralred text-sm flex-1">
+                        <button type="submit" class="clay-btn px-8 py-3.5 rounded-full text-sm font-bold text-white tracking-wider">
+                            Subscribe
+                        </button>
+                    </form>
+                    <div id="newsletter-toast" class="hidden text-xs text-corallight font-semibold pt-1">
+                        <i class="fa-solid fa-circle-check mr-1"></i> You're on the list! Check your inbox for your code.
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10 pt-8 border-t border-white/5 text-sm">
+                <div class="lg:col-span-2 space-y-4">
+                    <a href="#" class="flex items-center gap-2">
+                        <div class="w-8 h-8 rounded-lg bg-coralred flex items-center justify-center text-white font-bold text-sm">
+                            <i class="fa-solid fa-guitar"></i>
+                        </div>
+                        <span class="font-display font-extrabold text-xl text-white">MUSIC STORE</span>
+                    </a>
+                    <p class="text-gray-400 text-xs leading-relaxed max-w-sm">
+                        Your destination for iconic electric guitars, high-gain amplifiers, and pro studio accessories. Built for musicians who play with passion.
+                    </p>
+                    <div class="flex items-center gap-3 text-gray-400 pt-2">
+                        <a href="#" class="w-9 h-9 rounded-full bg-musiccard flex items-center justify-center hover:text-coralred hover:bg-white/5 transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-full bg-musiccard flex items-center justify-center hover:text-coralred hover:bg-white/5 transition-colors"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-full bg-musiccard flex items-center justify-center hover:text-coralred hover:bg-white/5 transition-colors"><i class="fa-brands fa-tiktok"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-full bg-musiccard flex items-center justify-center hover:text-coralred hover:bg-white/5 transition-colors"><i class="fa-brands fa-facebook-f"></i></a>
+                    </div>
+                </div>
+
+                <div class="space-y-3">
+                    <h4 class="font-display font-bold text-white text-base">Shop Gear</h4>
+                    <ul class="space-y-2 text-gray-400 text-xs">
+                        <li><a href="#products" class="hover:text-coralred transition-colors">Electric Guitars</a></li>
+                        <li><a href="#products" class="hover:text-coralred transition-colors">Bass Guitars</a></li>
+                        <li><a href="#products" class="hover:text-coralred transition-colors">Tube Amplifiers</a></li>
+                        <li><a href="#products" class="hover:text-coralred transition-colors">Effects Pedals</a></li>
+                        <li><a href="#products" class="hover:text-coralred transition-colors">Studio Headphones</a></li>
+                    </ul>
+                </div>
+
+                <div class="space-y-3">
+                    <h4 class="font-display font-bold text-white text-base">Customer Support</h4>
+                    <ul class="space-y-2 text-gray-400 text-xs">
+                        <li><a href="#" class="hover:text-coralred transition-colors">Order Tracking</a></li>
+                        <li><a href="#" class="hover:text-coralred transition-colors">Guitar Setup Guide</a></li>
+                        <li><a href="#" class="hover:text-coralred transition-colors">Warranty & Repairs</a></li>
+                        <li><a href="#" class="hover:text-coralred transition-colors">Shipping & Returns</a></li>
+                        <li><a href="#" class="hover:text-coralred transition-colors">Contact Support</a></li>
+                    </ul>
+                </div>
+
+                <div class="space-y-3">
+                    <h4 class="font-display font-bold text-white text-base">Flagship Store</h4>
+                    <p class="text-gray-400 text-xs leading-relaxed">
+                        742 Evergreen Terrace,<br>
+                        Nashville, TN 37203<br>
+                        Mon - Sat: 10am - 8pm
+                    </p>
+                    <p class="text-coralred text-xs font-semibold">
+                        <i class="fa-solid fa-phone mr-1"></i> (800) 555-ROCK
+                    </p>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500 gap-4">
+                <div>&copy; 2026 MUSIC STORE Inc. All Rights Reserved.</div>
+                <div class="flex items-center gap-6">
+                    <a href="#" class="hover:text-gray-300">Privacy Policy</a>
+                    <a href="#" class="hover:text-gray-300">Terms of Service</a>
+                    <a href="#" class="hover:text-gray-300">Cookie Preferences</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <script>
+        const mobileToggle = document.getElementById('mobile-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        let cartCount = 0;
+        const cartCountEl = document.getElementById('cart-count');
+        const addCartBtns = document.querySelectorAll('.add-cart-btn');
+
+        addCartBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                cartCount++;
+                cartCountEl.textContent = cartCount;
+                btn.classList.add('scale-125', 'bg-emerald-500');
+                setTimeout(() => {
+                    btn.classList.remove('scale-125', 'bg-emerald-500');
+                }, 200);
+            });
+        });
+
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const productCards = document.querySelectorAll('.product-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => {
+                    b.classList.remove('text-white', 'bg-coralred', 'shadow-md');
+                    b.classList.add('text-gray-400');
+                });
+
+                btn.classList.add('text-white', 'bg-coralred', 'shadow-md');
+                btn.classList.remove('text-gray-400');
+
+                const category = btn.getAttribute('data-category');
+
+                productCards.forEach(card => {
+                    if (category === 'all' || card.getAttribute('data-category') === category) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        const newsletterForm = document.getElementById('newsletter-form');
+        const newsletterToast = document.getElementById('newsletter-toast');
+
+        newsletterForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            newsletterToast.classList.remove('hidden');
+            newsletterForm.reset();
+            setTimeout(() => {
+                newsletterToast.classList.add('hidden');
+            }, 5000);
+        });
+    </script>
+</body>
+</html>
